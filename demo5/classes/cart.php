@@ -141,7 +141,14 @@ public function show_thongtinid($id){
 }
  public function show_hopdong(){
    $query = "SELECT sesis,dates,khach_hang.ten ,so_user,noidung,tg,dates,tinhtrang,Sum(thanhtien) FROM hopdong 
-   INNER JOIN khach_hang ON hopdong.id_user = khach_hang.id
+   INNER JOIN khach_hang ON hopdong.id_user = khach_hang.id where tinhtrang=0
+    Group by sesis,dates,khach_hang.ten ,so_user,noidung,tg,dates,tinhtrang" ;
+   $result = $this->db->select($query);
+   return $result;
+}
+public function show_hopdong1(){
+   $query = "SELECT sesis,dates,khach_hang.ten ,so_user,noidung,tg,dates,tinhtrang,Sum(thanhtien) FROM hopdong 
+   INNER JOIN khach_hang ON hopdong.id_user = khach_hang.id where tinhtrang=1
     Group by sesis,dates,khach_hang.ten ,so_user,noidung,tg,dates,tinhtrang" ;
    $result = $this->db->select($query);
    return $result;

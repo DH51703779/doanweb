@@ -35,7 +35,7 @@ button{
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-9 ftco-animate text-center mb-4">
-                <h1 class="mb-2 bread">Specialties</h1>
+                <h1 class="mb-2 bread">Menu</h1>
                 <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
                                 class="ion-ios-arrow-forward"></i></a></span> <span>Menu <i
                             class="ion-ios-arrow-forward"></i></span></p>
@@ -51,7 +51,17 @@ button{
         <form action=menu.php method=post>
                 <input name=key type="search" placeholder="Search">
                 <button type="submit" >tìm</button>
+               
             </form>
+            <div class="row" >
+                <!-- <form action=menu.php method=post >
+                <select name="value" id="">
+                <a href="?value=1">  <option >giá tăng dần </option> </a>
+                <a href="?value=0">   <option > giá giảm dần</option></a>
+                </select>
+                <button ></button>
+                </form> -->
+            </div>
             <div class="row">
                 <div class="col-md-12 nav-link-wrap">
                     <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist"
@@ -114,7 +124,12 @@ button{
 								</div>
 								<?php
             					}
-       						}
+                               }
+                               else{
+                                   ?>
+                                   <h3> Không có món phù hợp </h3>
+                                       <?php
+                               }
             			} else{
                 			if($monkey){
                     			while($result_mon = $monkey->fetch_assoc()){

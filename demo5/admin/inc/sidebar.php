@@ -20,24 +20,19 @@
                         <li><a href="kmlist.php">Danh sách </a> </li>
                     </ul>
                 </li>
-                <li><a class="menuitem">Quản Lý dịch vụ</a>
+             
+                <li><a class="menuitem">Quản Lý tin tức</a>
                     <ul class="submenu">
-                        <li><a href="productadd.php">Thêm dịch vụ</a> </li>
-                        <li><a href="productlist.php">Danh sách dịch vụ</a> </li>
-                    </ul>
-                </li>
-                <li><a class="menuitem">Quản Lý Khu vực</a>
-                    <ul class="submenu">
-                        <li><a href="productadd.php">Cập nhật khu vực</a> </li>
+                        <li><a href="updatetin.php">Cập nhật tin tức</a> </li>
                         
-                        <li><a href="productlist.php">Cập nhật bàn</a> </li>
+                        <li><a href="danhsachtin.php">danh sách tin tức</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Quản Lý hợp đồng</a>
                     <ul class="submenu">
                         <li><a href="hopdongmoi.php">Hợp đồng mới</a> </li>
                         
-                        <li><a href="hopdongdit.php">Danh sách hợp đồng</a> </li>
+                        <li><a href="hopdong.php">Danh sách hợp đồng</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Thống kê doanh số</a>

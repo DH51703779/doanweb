@@ -9,9 +9,7 @@ if(isset($_GET['idorder']) && $_GET['idorder']=='order'){
 	$userid= session::get('id');
 
 }
-else{
-		
-}
+
 
 
 if($_SERVER['REQUEST_METHOD']==='POST'){

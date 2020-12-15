@@ -10,7 +10,8 @@ spl_autoload_register(function($class){
         $ct= new cart();
         $us = new user();
         $loaimon = new loaimon();
-        $mon = new mon(); 
+		$mon = new mon(); 
+		$news = new news();
 
   header("Cache-Control: no-cache, must-revalidate");
   header("Pragma: no-cache"); 
@@ -81,7 +82,7 @@ spl_autoload_register(function($class){
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item"><a href="index.php" class="nav-link">Trang chủ</a></li>
-	        	<li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+	        	<!-- <li class="nav-item"><a href="about.php" class="nav-link">About</a></li> -->
 	        	<li class="nav-item"><a href="menu.php" class="nav-link">Thực đơn</a></li>
 	        	<li class="nav-item "><a href="blog.php" class="nav-link">Tin thức</a></li>
            

@@ -154,6 +154,7 @@ class mon {
         $k2= "'".$key."%'";
         $query = "SELECT * FROM monan where name_mon like  $k OR name_mon like $k2 And tinhtrang=1" ;
         $result = $this->db->select($query);
+
         return $result;
     }
     public function get_detail($id){
@@ -161,6 +162,36 @@ class mon {
         From monan INNER JOIN loai_mon ON monan.id_loai = loai_mon.id_loai  where monan.id_mon = '$id'  ";
         // $query = "SELECT * FROM monan order by id_mon desc" ;
         $result = $this->db->select($query);
+        return $result;
+    }
+    public function getindex1(){
+        $query = " SELECT monan.* ,loai_mon.name_loai 
+        From monan INNER JOIN loai_mon ON monan.id_loai = loai_mon.id_loai where  noibat =1 order by rand() limit 2 ";
+        // $query = "SELECT * FROM monan order by id_mon desc" ;
+        $result = $this->db->select($query);
+        return $result;
+    }
+    public function getindex(){
+        $query = " SELECT monan.* ,loai_mon.name_loai 
+        From monan INNER JOIN loai_mon ON monan.id_loai = loai_mon.id_loai where  noibat =1 limit 2 ";
+        // $query = "SELECT * FROM monan order by id_mon desc" ;
+        $result = $this->db->select($query);
+        return $result;
+    }
+    public function montheogia(){
+        if(1){
+            $query = " SELECT monan.* ,loai_mon.name_loai 
+            From monan INNER JOIN loai_mon ON monan.id_loai = loai_mon.id_loai order by gia_mon desc ";
+            // $query = "SELECT * FROM monan order by id_mon desc" ;
+            $result = $this->db->select($query);
+            
+        }else
+        {$query = " SELECT monan.* ,loai_mon.name_loai 
+            From monan INNER JOIN loai_mon ON monan.id_loai = loai_mon.id_loai order by gia_mon asc ";
+            // $query = "SELECT * FROM monan order by id_mon desc" ;
+            $result = $this->db->select($query);
+            
+        }
         return $result;
     }
 }

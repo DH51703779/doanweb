@@ -145,122 +145,90 @@ include 'inc/header.php';
           </div>
         </div>
         <div class="row no-gutters d-flex align-items-stretch">
+		<?php
+					$index1 = $mon->getindex1();
+					if($index1){
+						while($result = $index1->fetch_assoc()){
+					?>
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+			
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-1.jpg);"></div>
+              <div class="menu-img img"  style="background-image: url(images/food/<?php echo $result['images']?>);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
 		                <div class="one-half">
-		                  <h3>Grilled Beef with potatoes</h3>
+		                <h3><?php echo $result['name_mon'] ?></h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price"><?php echo $fm->formatMoney($result['gia_mon'])?></span>
 		                </div>
 		              </div>
-		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+					  <?php echo $result['ghichu_mon'] ?> 
+                                                <p><a href="detail.php?monid=<?php echo $result['id_mon'] ?>" class="btn btn-primary">Order now</a></p>
 	              </div>
               </div>
-            </div>
-        	</div>
-        	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
-              <div class="text d-flex align-items-center">
-								<div>
-	              	<div class="d-flex">
-		                <div class="one-half">
-		                  <h3>Grilled Beef with potatoes</h3>
-		                </div>
-		                <div class="one-forth">
-		                  <span class="price">$29</span>
-		                </div>
-		              </div>
-		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
-	              </div>
-              </div>
-            </div>
-        	</div>
+			</div>
+			</div>
+			<?php
+						}}
+						$index = $mon->getindex();
+					if($index){
+						while($result = $index->fetch_assoc()){
+					?>
+	
+
 
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
         		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img order-md-last" style="background-image: url(images/breakfast-3.jpg);"></div>
+              <div class="menu-img img order-md-last" style="background-image: url(images/food/<?php echo $result['images']?>);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
 		                <div class="one-half">
-		                  <h3>Grilled Beef with potatoes</h3>
+		                  <h3><?php echo $result['name_mon'] ?></h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price"><?php echo $fm->formatMoney($result['gia_mon'])?></span>
 		                </div>
 		              </div>
-		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+					  <?php echo $result['ghichu_mon'] ?> 
+                                                <p><a href="detail.php?monid=<?php echo $result['id_mon'] ?>" class="btn btn-primary">Order now</a></p>
 	              </div>
               </div>
             </div>
-        	</div>
-        	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img order-md-last" style="background-image: url(images/breakfast-5.jpg);"></div>
-              <div class="text d-flex align-items-center">
-								<div>
-	              	<div class="d-flex">
-		                <div class="one-half">
-		                  <h3>Grilled Beef with potatoes</h3>
-		                </div>
-		                <div class="one-forth">
-		                  <span class="price">$29</span>
-		                </div>
-		              </div>
-		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
-	              </div>
-              </div>
-            </div>
-        	</div>
+			</div>
+			<?php
+						}}
+						$index3 = $mon->getindex1();
+					if($index3){
+						while($result = $index3->fetch_assoc()){
+					?>
+
 
         	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-6.jpg);"></div>
+			<div class="menus d-sm-flex ftco-animate align-items-stretch">
+              <div class="menu-img img"  style="background-image: url(images/food/<?php echo $result['images']?>);"></div>
               <div class="text d-flex align-items-center">
 								<div>
 	              	<div class="d-flex">
 		                <div class="one-half">
-		                  <h3>Grilled Beef with potatoes</h3>
+		                <h3><?php echo $result['name_mon'] ?></h3>
 		                </div>
 		                <div class="one-forth">
-		                  <span class="price">$29</span>
+		                  <span class="price"><?php echo $fm->formatMoney($result['gia_mon'])?></span>
 		                </div>
 		              </div>
-		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
+					  <?php echo $result['ghichu_mon'] ?> 
+                                                <p><a href="detail.php?monid=<?php echo $result['id_mon'] ?>" class="btn btn-primary">Order now</a></p>
 	              </div>
               </div>
-            </div>
-        	</div>
-        	<div class="col-md-12 col-lg-6 d-flex align-self-stretch">
-        		<div class="menus d-sm-flex ftco-animate align-items-stretch">
-              <div class="menu-img img" style="background-image: url(images/breakfast-2.jpg);"></div>
-              <div class="text d-flex align-items-center">
-								<div>
-	              	<div class="d-flex">
-		                <div class="one-half">
-		                  <h3>Grilled Beef with potatoes</h3>
-		                </div>
-		                <div class="one-forth">
-		                  <span class="price">$29</span>
-		                </div>
-		              </div>
-		              <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-		              <p><a href="#" class="btn btn-primary">Order now</a></p>
-	              </div>
-              </div>
-            </div>
-        	</div>
+			</div>
+			</div>
+			<?php
+						}}
+			?>
+        
         </div>
     	</div>
     </section>

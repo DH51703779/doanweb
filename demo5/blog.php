@@ -17,108 +17,32 @@ include 'inc/header.php';
 		<section class="ftco-section bg-light">
 			<div class="container">
 				<div class="row">
+          <?php
+          $show= $news->show_news();
+          if($show){
+            while($result = $show->fetch_assoc()){
+          ?>
           <div class="col-md-4 ftco-animate">
             <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url(images/food/<?php echo $result['images']?>);">
               </a>
               <div class="text pt-3 pb-4 px-4">
                 <div class="meta">
-                  <div><a href="#">Sept. 06, 2019</a></div>
+                  <div><a href="#"> <?php echo $result['ngaydang'] ?></a></div>
                   <div><a href="#">Admin</a></div>
                 </div>
-                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
+                <h3 class="heading"><a href="blogdetail.php?id=<?php echo $result['id'] ?>"> <?php echo $result['tieude'] ?></a></h3>
                 <p class="clearfix">
-                  <a href="#" class="float-left read">Read more</a>
+                  <a href="blogdetail.php?id=<?php echo $result['id'] ?>" class="float-left read">Read more</a>
                   <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text pt-3 pb-4 px-4">
-                <div class="meta">
-                  <div><a href="#">Sept. 06, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                <p class="clearfix">
-                  <a href="#" class="float-left read">Read more</a>
-                  <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text pt-3 pb-4 px-4">
-                <div class="meta">
-                  <div><a href="#">Sept. 06, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                <p class="clearfix">
-                  <a href="#" class="float-left read">Read more</a>
-                  <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
-              </a>
-              <div class="text pt-3 pb-4 px-4">
-                <div class="meta">
-                  <div><a href="#">Sept. 06, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                <p class="clearfix">
-                  <a href="#" class="float-left read">Read more</a>
-                  <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_5.jpg');">
-              </a>
-              <div class="text pt-3 pb-4 px-4">
-                <div class="meta">
-                  <div><a href="#">Sept. 06, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                <p class="clearfix">
-                  <a href="#" class="float-left read">Read more</a>
-                  <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
-              </a>
-              <div class="text pt-3 pb-4 px-4">
-                <div class="meta">
-                  <div><a href="#">Sept. 06, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Taste the delicious foods in Asia</a></h3>
-                <p class="clearfix">
-                  <a href="#" class="float-left read">Read more</a>
-                  <a href="#" class="float-right meta-chat"><span class="icon-chat"></span> 3</a>
-                </p>
-              </div>
-            </div>
-          </div>
+         <?php
+         }
+        }
+         ?>
         </div>
         <div class="row no-gutters my-5">
           <div class="col text-center">
@@ -126,10 +50,7 @@ include 'inc/header.php';
               <ul>
                 <li><a href="#">&lt;</a></li>
                 <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+               
                 <li><a href="#">&gt;</a></li>
               </ul>
             </div>
